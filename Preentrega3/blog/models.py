@@ -4,11 +4,11 @@ from django.db import models
 
 class Author(models.Model):
     name = models.CharField(max_length=50)
-    lastName = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     email = models.EmailField()
 
     def __str__(self):
-        return self.name + " " + self.lastName
+        return self.name + " " + self.last_name
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
