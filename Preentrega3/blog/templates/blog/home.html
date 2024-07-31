@@ -13,9 +13,19 @@
     <h2>Posts recientes:</h2>
     <ul class="list-group mt-4">
         {% for post in posts %}
-            <li class="list-group-item">{{ post.titulo }}</li>
+            <li class="list-group-item">
+                <h3>{{ post.titulo }}</h3>
+                <p>{{ post.contenido }}</p>
+                <p><strong>Autor:</strong> {{ post.autor.nombre }}</p>
+                <p><strong>Categorías:</strong> 
+                    {% for categoria in post.categorias.all %}
+                        {{ categoria.nombre }}{% if not forloop.last %}, {% endif %} <!-- si no es el ultimo elemento agrega una coma -->
+                    {% endfor %}
+                </p>
+                <p><strong>Fecha de creación:</strong> {{ post.fecha_creado }}</p>
+            </li>
         {% empty %}
-            <li class="list-group-item">No hay posts aun</li>
+            <li class="list-group-item">No hay posts aún</li>
         {% endfor %}
     </ul>
 {% endblock %}
