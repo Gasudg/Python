@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Bienvenido al Blog de Python! 🐍</h1>
+        <p class="lead">Este blog fue creado con Django.</p>
+        <hr class="my-4">
+        <p>Explora los ultimos posts, crea nuevo contenido y mas!</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'create_post' %}" role="button">Crea un nuevo Post</a>
+    </div>
+    <h2>Posts recientes:</h2>
+    <ul class="list-group mt-4">
+        {% for post in posts %}
+            <li class="list-group-item">{{ post.titulo }}</li>
+        {% empty %}
+            <li class="list-group-item">No hay posts aun</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

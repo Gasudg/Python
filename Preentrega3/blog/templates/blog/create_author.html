@@ -1,12 +1,12 @@
 {% extends "blog/base.html" %}
 
-{% block title %}Create Author{% endblock %}
+{% block title %}Crear Autor{% endblock %}
 
 {% block content %}
-    <h2>Create Author</h2>
-    <form method="post">
+    <h2>Crear Autor</h2>
+    <form method="post" class="mt-4">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Save</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 {% endblock %}
