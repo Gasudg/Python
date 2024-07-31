@@ -1,0 +1,15 @@
+.btn-primary {
+    background-color: greenyellow;
+    color: black;
+    border-color: yellowgreen;
+}
+
+.btn-primary:hover {
+    background-color: black;
+    color: greenyellow;
+    border-color: yellowgreen;
+}
+
+.navbar.bg-light {
+    background-color: greenyellow !important;
+}
